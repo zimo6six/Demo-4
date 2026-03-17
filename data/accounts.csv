@@ -1,0 +1,13 @@
+id,name,type,risk_level,balance,industry
+ACC001,张伟,personal,low,158000,employee
+ACC002,李芳,personal,low,42500,employee
+ACC003,王磊,company,medium,820000,trade
+ACC004,赵丽,personal,low,18700,employee
+ACC005,陈浩,personal,low,95000,employee
+ACC006,林娜,personal,medium,250000,real_estate
+ACC007,刘洋,company,low,3200000,trade
+ACC008,玄武投资,company,high,8500000,shell
+ACC009,贸通有限,company,medium,450000,trade
+ACC010,离岸贸易公司,company,high,12000000,offshore
+ACC011,孙明,personal,low,22000,employee
+ACC012,徐婷,personal,low,35000,employee
