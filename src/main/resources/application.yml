@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: aml-monitor-service
+  datasource:
+    url: jdbc:h2:mem:amldb;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  security:
+    user:
+      name: admin
+      password: demo1234
+
+server:
+  port: 8082
+  servlet:
+    context-path: /
+
+# AML 数据文件路径
+aml:
+  data:
+    transactions-path: data/transactions.csv
+    accounts-path: data/accounts.csv
+  rules:
+    large-amount-threshold: 50000
+    corporate-threshold: 200000
+    smurfing-window-hours: 24
+    smurfing-min-count: 3
+    layering-max-depth: 5
+
+logging:
+  level:
+    com.bank.aml: INFO
+    org.springframework.security: WARN
+  pattern:
+    console: "%d{HH:mm:ss} [%-5level] %logger{20} - %msg%n"
+  file:
+    name: logs/aml-monitor.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
